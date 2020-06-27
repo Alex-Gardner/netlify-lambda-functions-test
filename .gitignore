@@ -1,2 +1,3 @@
-/node_modules
-/app-keys
+node_modules
+app-keys
+functions
