@@ -1,7 +1,7 @@
 async function fetchUsers() {
   // URL when deployed to netlify: /.netlify/functions/getusers
   // URL when developing locally: http://localhost:9000/getusers
-  return await (await fetch("http://localhost:9000/getusers")).json();
+  return await (await fetch("/.netlify/functions/getusers")).json();
 }
 
 fetchUsers().then((data) => {

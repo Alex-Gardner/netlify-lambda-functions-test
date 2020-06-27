@@ -1,16 +1,14 @@
 import axios from "axios";
 
 exports.handler = function(event, context, callback) {
-  const { API_URL, API_CLIENT_ID, API_CLIENT_SECRET } = process.env;
-  // set process env variables during deployment
+  const { API_CLIENT_ID, API_CLIENT_SECRET, API_CLIENT_TOKEN } = process.env;
+  // personal secrets and tokens have been sent via process.env to netlify
   const API_URL = "https://api.github.com/users";
-  const API_CLIENT_ID = "1702d37d87758d91f3fc";
-  const API_CLIENT_SECRET = "5468008171adb1816e7436d1d05a997ec422958e";
   const initObject = {
     method: "GET",
     headers: {
       //   Authorization: "Basic " + basicAuthInfo,
-      Authorization: "token 4824a24539b592518d566ff58de0a27f06da41d3",
+      Authorization: "token " + API_CLIENT_TOKEN,
     },
   };
   //Send user response
